@@ -16,13 +16,13 @@ void foo(const char* input)
     //What? No extra arguments supplied to printf?
     //It's a cheap trick to view the stack 8-)
     //We saw this trick with format strings.
-    printf("My stack looks like:\n%p\n%p\n%p\n%p\n%p\n\n");
+    printf("My stack looks like:\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n\n");
 
     //Pass the user input straight to secure code public enemy #1.
     strcpy(buf, input);
     printf("buf after is: %s\n", buf);
 
-    printf("Now the stack looks like:\n%p\n%p\n%p\n%p\n%p\n\n");
+    printf("Now the stack looks like:\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n%p\n\n");
 }
 
 void bar(void)
@@ -33,8 +33,9 @@ void bar(void)
 int main(int argc, char* argv[])
 {
     //Blatant cheating to make life easier on myself
-    printf("Address of foo = %p\n", foo);
-    printf("Address of bar = %p\n", bar);
+    printf("Address of main = %-5p\n", main); //Check main's location
+    printf("Address of foo  = %-5p\n", foo);
+    printf("Address of bar  = %-5p\n", bar);
     if (argc != 2)
  	{
         printf("Please supply a string as an argument!\n");
